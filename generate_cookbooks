@@ -1,0 +1,2 @@
+sudo chef generate cookbook cookbook_name
+sudo knife cookbook upload cookbook_name

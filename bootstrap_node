@@ -1,0 +1,41 @@
+Launch a aws instance with a public ip.
+
+
+
+Enable login with password:
+Edit your SSHd config to allow password based logins:
+
+     sudo nano -w /etc/ssh/sshd_config
+
+Add the following line to /etc/ssh/sshd_config:
+
+     PasswordAuthentication yes
+
+Copy your authorized SSH keys if you want to log in via keys as well:
+
+     sudo mkdir /root/.ssh
+     sudo cp /home/ubuntu/.ssh/authorized_keys /root/.ssh/
+
+Reload your SSHd config:
+
+     sudo reload ssh
+
+Now you can login as root!
+
+
+
+You can go to sudo with sudo su -
+
+
+
+
+Now, bootstrap a node with the following command
+
+knife bootstrap 123.45.6.789 -x username -P password -N node_name --sudo
+
+
+
+
+Now edit the runlist of the particular host form the chef server on opscode.com
+And then run this on node:
+chef-client
